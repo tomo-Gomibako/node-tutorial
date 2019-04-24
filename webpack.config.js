@@ -10,7 +10,8 @@ module.exports = {
 	entry: src + "/index.jsx",
 	output: {
 		path: dist,
-		filename: "bundle.js"
+		filename: "bundle.js",
+		publicPath: "/"
 	},
 	module: {
 		rules: [
@@ -23,6 +24,9 @@ module.exports = {
 	},
 	resolve: {
 		extensions: [".js", ".jsx"]
+	},
+	devServer: {
+		historyApiFallback: true,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
