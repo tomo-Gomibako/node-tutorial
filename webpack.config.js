@@ -1,6 +1,7 @@
 require("@babel/register")
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const src = path.resolve(__dirname, "src")
 const dist = path.resolve(__dirname, "dist")
@@ -30,8 +31,12 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
+			inject: true,
 			template: src + "/index.html",
 			filename: "index.html"
-		})
+		}),
+		new CopyWebpackPlugin([
+			{ from: "public" }
+        ])
 	]
 }
