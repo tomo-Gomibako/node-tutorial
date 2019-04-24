@@ -2,6 +2,9 @@ import React from "react"
 
 export default class extends React.Component {
 	render() {
-		return <div>counter</div>
+		return <div>
+			hoge
+			<input type="button" />
+		</div>
 	}
 }
