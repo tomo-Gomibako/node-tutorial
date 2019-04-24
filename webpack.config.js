@@ -32,7 +32,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: true,
-			template: src + "/index.html",
+			template: src + "/template.html",
 			filename: "index.html"
 		}),
 		new CopyWebpackPlugin([
